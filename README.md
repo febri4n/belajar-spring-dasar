@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-### Connect ke VM Jenkins dengan Port Forwarding ke IP 1212 
+### Connect ke VM Jenkins dengan Port Forwarding ke Port 1212 
 ```bash
 ssh -D 1212 vagrant@192.168.1.12 -p 22 -i /home/febrian/Vagrant/belajar-jenkins/.vagrant/machines/jenkins-vm/virtualbox/private_key 
 ```
