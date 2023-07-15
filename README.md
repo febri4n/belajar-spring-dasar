@@ -1,6 +1,6 @@
 # Repository belajar jenkins
 
-by Programmer Zaman Now
+Code by Programmer Zaman Now
 
 ### Vagrantfile untuk create VM Jenkins
 ```ruby
@@ -47,3 +47,5 @@ keytool -importkeystore -srckeystore jenkins-vm-cert.p12 -srcstoretype pkcs12 -d
 ```bash
 java -jar jenkins.war --httpsPort=443 --httpPort=-1 --httpsKeyStore=jenkins-vm.jks --httpsKeyStorePassword="rahasia" &
 ```
+![image](https://github.com/febri4n/jenkins-playground/assets/18482250/0c8ac246-2a1a-4852-b218-da1c50477db1)
+
