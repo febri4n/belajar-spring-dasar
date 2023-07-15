@@ -49,3 +49,4 @@ java -jar jenkins.war --httpsPort=443 --httpPort=-1 --httpsKeyStore=jenkins-vm.j
 ```
 ![image](https://github.com/febri4n/jenkins-playground/assets/18482250/0c8ac246-2a1a-4852-b218-da1c50477db1)
 
+![image](https://github.com/febri4n/jenkins-playground/assets/18482250/0f98931a-12bb-40cb-b05a-82518f2f4bb6)
