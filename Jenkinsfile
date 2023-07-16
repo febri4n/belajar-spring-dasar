@@ -7,18 +7,16 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                echo("hello build 1")
-                sleep(5)
-                echo("hello build 2")
-                echo("hello build 3")
+                echo("Start build")
+                sh("./mvnw clean compile test-compile")
+                echo("Finish build ")
             }
         }
         stage("Test") {
             steps {
-                echo("hello test 1")
-                sleep(5)
-                echo("hello test 2")
-                echo("hello test 3")
+                echo("Start test")
+                sh("./mvnw test")
+                echo("Finish test ")
             }
         }
         stage("Deploy") {
