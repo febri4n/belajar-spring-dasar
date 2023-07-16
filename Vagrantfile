@@ -14,8 +14,6 @@ Vagrant.configure("2") do |master|
 
 end
 
-#############################################################
-
 Vagrant.configure("2") do |slave|
   slave.vm.box = "ubuntu/jammy64"
 
