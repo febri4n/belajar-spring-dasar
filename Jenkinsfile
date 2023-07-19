@@ -21,12 +21,12 @@ pipeline {
             }
         }
         stage("Test") {
-            steps {
-                agent {
-                    node {
-                        label "linux && java11"
-                    }
-                }   
+            agent {
+                node {
+                    label "linux && java11"
+                }
+            }  
+            steps { 
                 script {
                     def data = [
                         "firstName" : "Febrian",
