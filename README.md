@@ -1,6 +1,6 @@
 # Repository belajar jenkins
 
-Code by Programmer Zaman Now
+Credit code program `belajar-spring-dasar` oleh Programmer Zaman Now
 
 ### Vagrantfile untuk create VM Jenkins
 ```ruby
