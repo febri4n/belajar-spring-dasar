@@ -7,12 +7,17 @@ pipeline {
 
     stages {
         stage("Prepare") {
+            environment {
+                APP = credentials("febrian_rahasia")
+            }
             agent {
                 node {
                     label "linux && java11"
                 }
             }
             steps {
+                echo("App User: ${APP_USR}")
+                echo("App Password: ${APP_PSW}")
                 echo("Author: ${AUTHOR}")
                 echo("Blog URL: ${BLOG}")
                 echo("Start job: ${env.JOB_NAME}")
