@@ -1,11 +1,13 @@
 pipeline {
-    agent {
-        node {
-            label "linux && java11"
-        }
-    }
+    agent none
+
     stages {
         stage("Build") {
+            agent {
+                node {
+                    label "linux && java11"
+                }
+            }
             steps {
                 script {
                     for (int i = 0; i<10; i++) {
@@ -20,6 +22,11 @@ pipeline {
         }
         stage("Test") {
             steps {
+                agent {
+                    node {
+                        label "linux && java11"
+                    }
+                }   
                 script {
                     def data = [
                         "firstName" : "Febrian",
@@ -33,6 +40,11 @@ pipeline {
             }
         }
         stage("Deploy") {
+            agent {
+                node {
+                    label "linux && java11"
+                }
+            }
             steps {
                 echo("hello deploy 1")
                 sleep(5)
