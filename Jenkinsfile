@@ -1,5 +1,9 @@
 pipeline {
     agent none
+    environment {
+        AUTHOR = "Febrian"
+        BLOG = "https://febri4n.github.io/blog/"
+    }
 
     stages {
         stage("Prepare") {
@@ -9,6 +13,8 @@ pipeline {
                 }
             }
             steps {
+                echo("Author: ${AUTHOR}")
+                echo("Blog URL: ${BLOG}")
                 echo("Start job: ${env.JOB_NAME}")
                 echo("Start build: ${env.BUILD_NUMBER}")
                 echo("Branch name: ${env.BRANCH_NAME}")
