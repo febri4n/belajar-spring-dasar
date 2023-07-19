@@ -1,11 +1,18 @@
 pipeline {
     agent none
+
     environment {
         AUTHOR = "Febrian"
         BLOG = "https://febri4n.github.io/blog/"
     }
 
+    options {
+        disableConcurrentBuilds()
+        timeout(time: 10, unit: "MINUTES")
+    }
+
     stages {
+        
         stage("Prepare") {
             environment {
                 APP = credentials("febrian_rahasia")
@@ -26,6 +33,7 @@ pipeline {
                 echo("Branch name: ${env.BRANCH_NAME}")
             }
         }
+        
         stage("Build") {
             agent {
                 node {
@@ -44,6 +52,7 @@ pipeline {
                 echo("Finish build ")
             }
         }
+        
         stage("Test") {
             agent {
                 node {
@@ -63,6 +72,7 @@ pipeline {
                 echo("Finish test ")
             }
         }
+        
         stage("Deploy") {
             agent {
                 node {
@@ -77,6 +87,7 @@ pipeline {
             }
         }
     }
+
     post {
         always {
             echo "i always say hello again!"
