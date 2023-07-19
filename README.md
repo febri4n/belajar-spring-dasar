@@ -65,6 +65,29 @@ keytool -importkeystore -srckeystore jenkins-vm-cert.p12 -srcstoretype pkcs12 -d
 ```bash
 java -jar jenkins.war --httpsPort=443 --httpPort=-1 --httpsKeyStore=jenkins-vm.jks --httpsKeyStorePassword="rahasia" &
 ```
+### Membuat file system Jenkins running dengan HTTPS
+```ruby
+[Unit]
+Description=Jenkins Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/java -jar /home/vagrant/jenkins.war --httpsPort=443 --httpPort=-1 --httpsKeyStore=/home/vagrant/jenkins-vm.jks --httpsKeyStorePassword="pseud0nyms"
+Type=simple
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+![image](https://github.com/febri4n/jenkins-playground/assets/18482250/b8619a12-39ad-4557-85cf-4227e81d9898)
+
+```bash
+sudo systemctl enable jenkins.service
+sudo systemctl start jenkins.service
+sudo systemctl status jenkins.service
+sudo systemctl stop jenkins.service
+
+```
 ![image](https://github.com/febri4n/jenkins-playground/assets/18482250/0c8ac246-2a1a-4852-b218-da1c50477db1)
 
 ![image](https://github.com/febri4n/jenkins-playground/assets/18482250/0f98931a-12bb-40cb-b05a-82518f2f4bb6)
