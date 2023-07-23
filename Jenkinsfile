@@ -6,7 +6,7 @@ pipeline {
         BLOG = "https://febri4n.github.io/blog/"
     }
 
-    trigger {
+    triggers {
         cron("*/5 * * * *")
     }
 
