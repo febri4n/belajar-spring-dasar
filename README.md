@@ -95,3 +95,6 @@ sudo systemctl stop jenkins.service
 ### Menghubungkan Jenkins agar running di 2 node (Master & Slave)
 
 ![image](https://github.com/febri4n/jenkins-playground/assets/18482250/3dec2bdf-9a9a-4409-8208-e741f058540f)
+
+### Multiple branch Jenkins
+![image](https://github.com/febri4n/jenkins-playground/assets/18482250/a4f01b26-ce20-432b-8d8f-efafee8b9536)
