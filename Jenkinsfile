@@ -6,9 +6,9 @@ pipeline {
         BLOG = "https://febri4n.github.io/blog/"
     }
 
-    triggers {
-        cron("*/5 * * * *")
-    }
+    // triggers {
+    //     cron("*/5 * * * *")
+    // }
 
     options {
         disableConcurrentBuilds()
