@@ -100,6 +100,11 @@ pipeline {
         }
         
         stage("Deploy") {
+            input {
+                message "Can we deploy ?"
+                ok "Yes, of course"
+                submmitter "vagrant,root,febrian,febri4n"
+            }
             agent {
                 node {
                     label "linux && java11"
