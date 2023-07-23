@@ -121,6 +121,22 @@ pipeline {
                 echo("hello deploy 3")
             }
         }
+
+        stage("Release") {
+            when {
+                expression {
+                    return params.DEPLOY
+                }
+            }
+            agent {
+                node {
+                    label "linux && java11"
+                }
+            }
+            steps {
+                echo("Release it")
+            }
+        }
     }
 
     post {
