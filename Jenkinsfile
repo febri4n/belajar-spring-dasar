@@ -6,6 +6,10 @@ pipeline {
         BLOG = "https://febri4n.github.io/blog/"
     }
 
+    trigger {
+        cron("*/5 * * * *")
+    }
+
     options {
         disableConcurrentBuilds()
         timeout(time: 10, unit: 'MINUTES')
