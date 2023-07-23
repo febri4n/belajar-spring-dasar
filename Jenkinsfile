@@ -114,6 +114,7 @@ pipeline {
                 }
             }
             steps {
+                echo("Deploy to ${TARGET_ENV}")
                 echo("hello deploy 1")
                 sleep(5)
                 echo("hello deploy 2")
